@@ -103,10 +103,16 @@
 						v-show="!showInterval"
 						class="flex items-center justify-around interval-controls"
 					>
-						<button class="px-4 py-2 bg-blue-200 rounded-md">
+						<button
+							@click.prevent="cancelFormQuarter"
+							class="px-4 py-2 bg-blue-200 rounded-md"
+						>
 							Bekor qilish
 						</button>
-						<button class="px-4 py-2 bg-blue-400 rounded-md">
+						<button
+							@click.prevent="selectOneQuarter"
+							class="px-4 py-2 bg-blue-400 rounded-md"
+						>
 							Tanlash
 						</button>
 					</div>
@@ -236,6 +242,8 @@
 				this.checkedInterval = [];
 				console.log('Clear form');
 			},
+			selectOneQuarter() {},
+			cancelFormQuarter() {},
 		},
 	};
 </script>
