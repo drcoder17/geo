@@ -62,8 +62,6 @@
 			},
 		},
 		async mounted() {
-			this.geolocate();
-
 			const { data } = await axios.get(this.labUrl);
 
 			data.map((lab) => {
@@ -88,19 +86,6 @@
 			});
 		},
 		methods: {
-			geolocate() {
-				navigator.geolocation.getCurrentPosition(
-					(position) => {
-						this.myCoordinates = {
-							lat: position.coords.latitude,
-							lng: position.coords.longitude,
-						};
-					},
-					(error) => {
-						alert(error.message);
-					}
-				);
-			},
 			openInfoWindow(location) {
 				this.selectedLocation = location;
 				this.infoBoxOpen = !this.infoBoxOpen;
